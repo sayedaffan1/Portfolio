@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root { font-family: "Space Grotesk", sans-serif; color: #eef7f7; background: #05080d; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: #05080d; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+::selection { background:#64f5d4; color:#061012; }
