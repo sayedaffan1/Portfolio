@@ -6,6 +6,7 @@ import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import Terminal from "./components/Terminal";
 import ProjectModal from "./components/ProjectModal";
+import AccessGate from "./components/AccessGate";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUpRightFromSquare, FaFileArrowDown } from "react-icons/fa6";
 
 const skills = ["Python", "HTML", "CSS", "JavaScript", "MySQL", "SQL", "Kali Linux", "Nmap", "Wireshark", "Burp Suite", "Tenable Nessus", "Bash", "VMware", "Packet Tracer"];
@@ -22,7 +23,7 @@ function Reveal({ children }) { return <motion.div variants={reveal} initial="hi
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
-  return <><CustomCursor /><Suspense fallback={<div className="three-bg" />}><Background3D /></Suspense><Navbar /><main>
+  return <><CustomCursor /><AccessGate /><Suspense fallback={<div className="three-bg" />}><Background3D /></Suspense><Navbar /><main>
     <section className="hero" id="home"><div className="eyebrow">● AVAILABLE FOR OPPORTUNITIES</div><p className="hello">HELLO, I'M</p><h1>AFFAN <span>SAYED.</span></h1><div className="hero-bottom"><p>Cybersecurity enthusiast with a foundation in ethical hacking, network security, vulnerability assessment, and penetration testing.</p><div className="hero-actions"><a href="#projects" className="btn primary">Explore Projects <FaArrowUpRightFromSquare /></a><a href="/resume.pdf" download className="btn ghost"><FaFileArrowDown /> Download CV</a></div></div><div className="scroll-hint">SCROLL TO EXPLORE ↓</div></section>
     <section className="section about" id="about"><Reveal><div className="section-label">01 / ABOUT</div><div className="section-grid"><h2>Building a safer<br /><span>digital world.</span></h2><div className="about-copy"><p>I'm a motivated and detail-oriented cybersecurity enthusiast with a strong foundation in ethical hacking, network security, and penetration testing.</p><p>I enjoy identifying vulnerabilities, assessing security risks, and continuously learning new technologies to strengthen cybersecurity defenses.</p><div className="stats"><div><strong>01+</strong><span>Year Internship Experience</span></div><div><strong>06</strong><span>Security Projects</span></div><div><strong>14+</strong><span>Technical Skills</span></div></div></div></div></Reveal></section>
     <section className="section terminal-section" id="terminal"><Reveal><div className="section-label">02 / SYSTEM STATUS</div><Terminal /></Reveal></section>
