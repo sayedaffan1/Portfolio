@@ -35,6 +35,7 @@ footer { position:relative; z-index:1; padding:28px 10%; border-top:1px solid rg
 
 .gate-mark { margin-bottom:22px; }
 .gate-mark span { display:inline-block; margin-left:.04em; transform:translateY(-.13em); }
+.cursor,.cursor-ring { z-index:300; }
 
 /* Final motion and interaction polish */
 .three-bg::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.17; background-image:linear-gradient(rgba(100,245,212,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(100,245,212,.045) 1px,transparent 1px); background-size:56px 56px; mask-image:linear-gradient(to bottom,black,transparent 72%); animation:grid-drift 22s linear infinite; }
