@@ -11,7 +11,7 @@ export default function Navbar({ theme, onToggleTheme, performanceMode, onToggle
       <div className={`navlinks ${open ? "open" : ""}`}>
         {links.map(([name,id]) => <a className={active === id ? "active" : ""} key={id} href={`#${id}`} onClick={() => setOpen(false)}>{name}</a>)}
       </div>
-      <div className="nav-tools"><button className="nav-icon" onClick={onTogglePerformance} aria-label="Toggle performance mode" aria-pressed={performanceMode}>{performanceMode ? "◌" : "◉"}</button><button className="nav-icon" onClick={onToggleTheme} aria-label="Toggle color theme">{theme === "light" ? "◐" : "☼"}</button><a href="#contact" className="nav-cta">CONTACT ↗</a></div>
+      <div className="nav-tools"><button className="nav-icon" data-tooltip={performanceMode ? "Enable 3D visuals" : "Performance mode"} onClick={onTogglePerformance} aria-label="Toggle performance mode" aria-pressed={performanceMode}>{performanceMode ? "◌" : "◉"}</button><button className="nav-icon" data-tooltip={theme === "light" ? "Dark theme" : "Light theme"} onClick={onToggleTheme} aria-label="Toggle color theme">{theme === "light" ? "◐" : "☼"}</button><a href="#contact" className="nav-cta">CONTACT ↗</a></div>
     </nav>
   );
 }
