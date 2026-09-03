@@ -70,6 +70,8 @@ body.performance-mode .three-bg canvas { display:none; } body.performance-mode .
 @media(max-width:800px) { .activity-panel { grid-template-columns:1fr; gap:28px; padding:24px; }.activity-list article { grid-template-columns:48px 1fr 8px; } }
 .radar { overflow:visible; }
 .radar-contact { position:absolute; z-index:4; width:5px; height:5px; border-radius:50%; background:#d9ff00; box-shadow:0 0 0 4px rgba(217,255,0,.08),0 0 12px #d9ff00; animation:radar-contact 4.8s linear infinite; }.contact-one { top:31%; left:67%; animation-delay:-.8s; }.contact-two { top:68%; left:36%; animation-delay:-2.25s; }.contact-three { top:50%; left:75%; animation-delay:-3.65s; } @keyframes radar-contact { 0%,10%,100% { opacity:.1; transform:scale(.7); } 14%,22% { opacity:1; transform:scale(1.45); } 28% { opacity:.35; transform:scale(1); } }
+.radar::after { background:conic-gradient(from 0deg,rgba(100,245,212,.75) 0deg,rgba(100,245,212,.27) 8deg,transparent 9deg 360deg); }
+.radar-contact { background:#8dffe8; box-shadow:0 0 0 4px rgba(100,245,212,.1),0 0 12px #64f5d4; }
 @media(max-width:800px) { .live-status { position:static; margin-bottom:35px; flex-wrap:wrap; }.hero-role { line-height:1.7; }.command-trigger { right:15px; bottom:16px; }.scroll-progress { display:none; } }
 
 /* Final motion and interaction polish */
