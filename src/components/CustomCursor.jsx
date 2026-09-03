@@ -6,7 +6,7 @@ export default function CustomCursor() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const dot = dotRef.current, reticle = reticleRef.current, corners = cornersRef.current;
     let x = -100, y = -100, smoothX = -100, smoothY = -100, frame = 0;
-    const place = (element, px, py) => { element.style.transform = `translate3d(${px}px, ${py}px, 0)`; };
+    const place = (element, px, py) => { element.style.left = `${px}px`; element.style.top = `${py}px`; };
     const move = event => {
       x = event.clientX; y = event.clientY; place(dot, x, y);
       const interactive = Boolean(event.target.closest("a, button, [role='button'], input, textarea"));
