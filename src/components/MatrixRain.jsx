@@ -1,0 +1,3 @@
+import { useMemo } from "react";
+const glyphs = "01AF<>/{}#%*+";
+export default function MatrixRain() { const columns = useMemo(() => Array.from({ length: innerWidth < 800 ? 12 : 27 }, (_, index) => ({ id:index, left:`${(index + Math.random() * .8) * 3.8}%`, delay:`-${Math.random() * 18}s`, duration:`${12 + Math.random() * 14}s`, text:Array.from({ length:16 }, () => glyphs[Math.floor(Math.random() * glyphs.length)]).join(" ") })), []); return <div className="matrix-rain" aria-hidden="true">{columns.map(column => <span key={column.id} style={{ left:column.left, animationDelay:column.delay, animationDuration:column.duration }}>{column.text}</span>)}</div>; }

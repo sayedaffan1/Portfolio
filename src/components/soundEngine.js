@@ -1,0 +1,5 @@
+let context;
+function audioContext() { context ||= new (window.AudioContext || window.webkitAudioContext)(); return context; }
+function tone(frequency, start, duration, volume = .025, type = "sine") { const ctx = audioContext(), oscillator = ctx.createOscillator(), gain = ctx.createGain(); oscillator.type = type; oscillator.frequency.setValueAtTime(frequency, start); gain.gain.setValueAtTime(.0001, start); gain.gain.exponentialRampToValueAtTime(volume, start + .012); gain.gain.exponentialRampToValueAtTime(.0001, start + duration); oscillator.connect(gain).connect(ctx.destination); oscillator.start(start); oscillator.stop(start + duration + .02); }
+export function playAccessSound() { const ctx = audioContext(); if (ctx.state === "suspended") ctx.resume(); const start = ctx.currentTime; tone(230, start, .07, .018, "square"); tone(370, start + .09, .07, .018, "square"); tone(620, start + .18, .16, .022, "sine"); }
+export function playUiSound(primary = false) { const ctx = audioContext(); if (ctx.state === "suspended") ctx.resume(); tone(primary ? 520 : 300, ctx.currentTime, .05, .014, primary ? "sine" : "triangle"); }
