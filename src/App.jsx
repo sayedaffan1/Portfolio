@@ -10,7 +10,6 @@ import AccessGate from "./components/AccessGate";
 import CommandPalette from "./components/CommandPalette";
 import ScrollProgress from "./components/ScrollProgress";
 import LiveStatus from "./components/LiveStatus";
-import UiSound from "./components/UiSound";
 import FocusMap from "./components/FocusMap";
 import MatrixRain from "./components/MatrixRain";
 import ActivityPanel from "./components/ActivityPanel";
@@ -38,7 +37,7 @@ export default function App() {
   useEffect(() => { const projectId = new URLSearchParams(location.search).get("project"); if (projectId) setSelectedProject(projects.find(project => project.num === projectId) || null); }, []);
   const openProject = project => { setSelectedProject(project); history.replaceState(null, "", `?project=${project.num}#projects`); };
   const closeProject = () => { setSelectedProject(null); history.replaceState(null, "", "#projects"); };
-  return <><CustomCursor /><AccessGate /><ScrollProgress /><CommandPalette /><UiSound /><MatrixRain /><Suspense fallback={<div className="three-bg" />}><Background3D /></Suspense><Navbar theme={theme} onToggleTheme={() => setTheme(theme === "dark" ? "light" : "dark")} performanceMode={performanceMode} onTogglePerformance={() => setPerformanceMode(!performanceMode)} /><main>
+  return <><CustomCursor /><AccessGate /><ScrollProgress /><CommandPalette /><MatrixRain /><Suspense fallback={<div className="three-bg" />}><Background3D /></Suspense><Navbar theme={theme} onToggleTheme={() => setTheme(theme === "dark" ? "light" : "dark")} performanceMode={performanceMode} onTogglePerformance={() => setPerformanceMode(!performanceMode)} /><main>
     <section className="hero" id="home"><div className="eyebrow">● AVAILABLE FOR OPPORTUNITIES</div><LiveStatus /><p className="hello">HELLO, I'M</p><h1>AFFAN <span>SAYED.</span></h1><p className="hero-role">INFORMATION SECURITY INTERN <b>·</b> CYBERSECURITY ENTHUSIAST</p><div className="hero-bottom"><p>Cybersecurity enthusiast with a foundation in ethical hacking, network security, vulnerability assessment, and penetration testing.</p><div className="hero-actions"><a href="#projects" className="btn primary">Explore Projects <FaArrowUpRightFromSquare /></a><a href="/resume.pdf" download className="btn ghost"><FaFileArrowDown /> Download CV</a></div></div><div className="scroll-hint">SCROLL TO EXPLORE ↓</div></section>
     <section className="section about" id="about"><Reveal><div className="section-label">01 / ABOUT</div><div className="section-grid"><h2>Building a safer<br /><span>digital world.</span></h2><div className="about-copy"><p>I'm a motivated and detail-oriented cybersecurity enthusiast with a strong foundation in ethical hacking, network security, and penetration testing.</p><p>I enjoy identifying vulnerabilities, assessing security risks, and continuously learning new technologies to strengthen cybersecurity defenses.</p><div className="stats"><div><strong>01+</strong><span>Year Internship Experience</span></div><div><strong>06</strong><span>Security Projects</span></div><div><strong>14+</strong><span>Technical Skills</span></div></div></div></div></Reveal></section>
     <section className="section terminal-section" id="terminal"><Reveal><div className="section-label">02 / SYSTEM STATUS</div><Terminal /></Reveal></section>
