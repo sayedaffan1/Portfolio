@@ -1,0 +1,2 @@
+import { useEffect, useState } from "react";
+export default function ScrollProgress() { const [progress, setProgress] = useState(0); useEffect(() => { const update = () => setProgress((scrollY / Math.max(document.documentElement.scrollHeight - innerHeight, 1)) * 100); addEventListener("scroll", update, { passive:true }); update(); return () => removeEventListener("scroll", update); }, []); return <div className="scroll-progress" aria-hidden="true"><span style={{ height:`${progress}%` }} /></div>; }
